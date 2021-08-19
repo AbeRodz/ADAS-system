@@ -1,7 +1,11 @@
 # ADAS-system
 ***Bachelor's dissertation thesis***
 
-This project is about an ADAS system with lane and object detection.
+**This project is about an ADAS system with lane and object detection.**
+
+Why make this project?
+
+Well since quite a while i've been interested in autonomous vehicles, on september 2020 i began a coursera specialization in automous vehicles, i got insights on how the math behind, carla simulator, and other stuff. What really fascinated me was Computer Vision in vehicles, so that's why i decided to explore this field while doing my thesis.
 
 The project is divided is two sections:
   
