@@ -5,7 +5,7 @@
 
 Why make this project?
 
-Well since quite a while i've been interested in autonomous vehicles, on september 2020 i began a coursera specialization in automous vehicles, i got insights on how the math behind, carla simulator, and other stuff. What really fascinated me was Computer Vision in vehicles, so that's why i decided to explore this field while doing my thesis.
+Since quite a while i've been interested in autonomous vehicles, on september 2020 i began a coursera specialization in automous vehicles, i got insights on the math behind, carla simulator, and other stuff. What really fascinated me was Computer Vision in vehicles, so that's why i decided to explore this field while doing my thesis.
 
 The project is divided is two sections:
   
@@ -16,15 +16,17 @@ The project is divided is two sections:
       - Frame extraction ✔️
       - Image processing ✔️
       - Sliding window technique ✔️
+
+(under testing and revision) ⏲️
       
   2. Object Detection:
-      - **In Progress**
+      - **In Progress** 🚧
 
 
 ## Lane detection
 ### Data Collection and Video Rescaling
 For Data collection, a video of a highway was taken using a smartphone, though the native video resolution is **1080p at 16:9**, in order to reduce 
-computation requirements, it was necessary to downgrade the video resolution, **480p at 16:9** aspect ratio was selected, for rescaling use the  *rescalingimages.py* file.
+computation requirements, it was necessary to downgrade the video resolution, **480p at 16:9** aspect ratio was selected, for rescaling use the *rescalingimages.py* file.
 
 ### Frame Extraction
 Having a video with the adequate resolution, it is now necessary to extract frames and build a dataset of images, for that *datagenerator.py* uses opencv to extract each frame from a video source.
@@ -46,7 +48,9 @@ Having a video with the adequate resolution, it is now necessary to extract fram
 ## Requirements
 - Python 3.7
 - Carla Simulator 0.9.4
+- pygame
+- pytorch or Tensorflow?
 - Matplotlib
 - Numpy
 - Opencv 
-- Tensorflow
+
