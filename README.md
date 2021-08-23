@@ -25,25 +25,32 @@ The project is divided is two sections:
 
 ## Lane detection
 ### Data Collection and Video Rescaling
-For Data collection, a video of a highway was taken using a smartphone, though the native video resolution is **1080p at 16:9**, in order to reduce 
-computation requirements, it was necessary to downgrade the video resolution, **480p at 16:9** aspect ratio was selected, for rescaling use the *rescalingimages.py* file.
+For Data collection, a video of a highway was taken using a smartphone, though the native video resolution is **1080p at 16:9**, in order to reduce computation requirements, it was necessary to downgrade the video resolution, **480p at 16:9** aspect ratio was selected, for rescaling use the *rescalingimages.py* file.
 
 ### Frame Extraction
 Having a video with the adequate resolution, it is now necessary to extract frames and build a dataset of images, for that *datagenerator.py* uses opencv to extract each frame from a video source.
 
 
 
-#### Lane detection Pipeline
+### Lane detection Pipeline
+#### Preprocessing
+  - Convert RGB to GRAY
+    - Apply a Sobel operator for border detection, and compute its magnitude and gradient
+    - Obtain a binary image for both magnitude and gradient
+  - Convert RGB to HLS
+    - Obtain a binary image of a thresholded HLS image
+  - Merge all binary images using bitwise operators
 
-- Convert RGB to GRAY
-  - Apply a Sobel operator, and compute its magnitude and gradient
-  - Obtain a binary image for both magnitude and gradient
-- Convert RGB to HLS
-  - Obtain a binary image of a thresholded HLS image
-- Merge all binary images using bitwise operators
-- Apply warping or perspective transform
-- Create a histogram from the warped binary image
-- Apply sliding window search for high frequency data obtain from the histogram
+#### Sliding window technique and bounding area 
+  - Apply warping or perspective transform to the binary image
+  - Create a histogram from the warped binary image
+  - Apply sliding window search for high frequency data obtain from the histogram
+  - Apply polinomial fitting
+  - Fill the detected area with a bounding box
+  - Apply the inverse perspective transform
+  - Final image
+  - Apply the algorithm to each frame on the dataset, for that use *lanedetector.py*
+- Merge processed frames onto a video, use *final2video.py*
 
 ## Requirements
 - Python 3.7
