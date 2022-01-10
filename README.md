@@ -17,13 +17,10 @@ The project is divided is two sections:
       - Sliding window technique ✔️
       - Testing done on Carla simulator ✔️
       - Testing done on Dataset ✔️
-      - Precision calculation 
-
-(under testing and revision) ⏲️
+      - Precision calculation ✔️
       
   2. Object Detection:
-      - **In Progress** 🚧
-      - Yolov5 Implementation
+      - Yolov5 Implementation ✔️
 
 
 ## Lane detection
@@ -31,7 +28,7 @@ The project is divided is two sections:
 For Data  collection, a video of a highway was taken using a smartphone, though the native video resolution is **1080p at 16:9**, in order to reduce computation requirements, it was necessary to downgrade the video resolution, **480p at 16:9** aspect ratio was selected, for rescaling use the `rescalingimages.py` file.
 
 ### Frame Extraction
-Having a video with the adequate resolution, it is now necessary to extract frames and build a dataset of images, for that `datagenerator.py` uses opencv to extract each frame from a video source.
+Having a video with the adequate resolution, it is now necessary to extract frames and build a dataset of images, for that `datagenerator.py` uses Opencv to extract each frame from a video source.
 
 ### Lane detection Pipeline
 #### Preprocessing
@@ -54,11 +51,14 @@ Having a video with the adequate resolution, it is now necessary to extract fram
 - Merge processed frames onto a video, use `final2video.py`
 
 ### Object Detection
-For the custom dataset, each frame was marked with the lanes detected, this frames are passed to yolov5 on a google colab with gpu acceleration.
+For the custom dataset, each frame was marked with the lanes detected, this frames are passed to yolov5 on a google colab with gpu acceleration. Then having frames with both lane detection and object detection, a video was created by merging all frames of interest.
 Note: It hasn't been implemented on Carla Simulator yet.
 
+### This Project is finished.
+This project was completed even though there is room for improvement and testing under different conditions, the results for lane detection precision are of 94% under ideal condtions and 58% under non-ideal conditions. In the near future I'll be continuing this project.
+
 ### Where's the code?
-This project is Open Source, but as I'm doing my dissertation thesis, I'll try to publish it on a journal, I was advised to wait before uploading it on this repo if the project is going to be published.
+This project is Open Source, but, I'll try to publish it on a journal, I was advised to wait before uploading it on this repo if the project is going to be published.
 
 ## Requirements
 - Python 3.7
