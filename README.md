@@ -39,6 +39,11 @@ Having a video with the adequate resolution, it is now necessary to extract fram
     - Obtain a binary image of a thresholded HLS image
   - Merge all binary images using bitwise operators
 
+##### Example
+
+  ![Example](https://github.com/AbeRodz/ADAS-system/blob/main/img/Figure_1.png "Example")
+
+
 #### Sliding window technique and bounding area 
   - Apply warping or perspective transform to the binary image
   - Create a histogram from the warped binary image
